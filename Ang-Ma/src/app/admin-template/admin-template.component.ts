@@ -7,8 +7,8 @@ import { AuthenticationService } from "../services/authentication.service";
   templateUrl: './admin-template.component.html',
   styleUrl: './admin-template.component.css'
 })
-export class AdminTemplateComponent {
-
+export class AdminTemplateComponent
+{
   constructor(public  authService: AuthenticationService) {
     }
 
