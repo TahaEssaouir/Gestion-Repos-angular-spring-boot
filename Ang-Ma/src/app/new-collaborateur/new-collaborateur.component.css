@@ -1,0 +1,18 @@
+mat-form-field {
+  display: block;
+}
+
+.collab-from{
+  width: 650px;
+}
+
+.btn-save{
+  border: 1px solid #14bf1d;
+  color: #14bf1d;
+  background-color: aquamarine;
+}
+
+.btn-save:hover {
+  background-color: #14bf1d;
+  color: #ffffff;
+}

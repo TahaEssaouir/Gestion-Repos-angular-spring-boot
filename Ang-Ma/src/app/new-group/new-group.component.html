@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-card-title>Créer un Groupe</mat-card-title>
+  <form (click)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Terminal</mat-label>
+      <input matInput [(ngModel)]="groupeDto.terminal" name="terminal" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Fonction</mat-label>
+      <input matInput [(ngModel)]="groupeDto.fonction" name="fonction" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Membres Groupe A</mat-label>
+      <input matInput [(ngModel)]="groupeDto.groupeA" name="groupeA" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Membres Groupe B</mat-label>
+      <input matInput [(ngModel)]="groupeDto.groupeB" name="groupeB" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Membres Groupe C</mat-label>
+      <input matInput [(ngModel)]="groupeDto.groupeC" name="groupeC" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Créer</button>
+  </form>
+</mat-card>

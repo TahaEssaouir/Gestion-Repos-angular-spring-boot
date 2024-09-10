@@ -1,0 +1,42 @@
+.table th{
+  border: solid 2px #6080e4;
+  padding: 15px;
+  background-color: #6080e4;
+}
+
+.table td{
+  border: solid  2px #6080e4;
+  padding: 15px;
+  background-color: #f4e4de;
+}
+
+
+.btn-outline-danger {
+  border: 2px solid red;
+  color: red;
+  background-color: transparent;
+}
+
+.btn-outline-danger:hover {
+  background-color: red;
+  color: #ffffff;
+}
+
+.btn-outline-normal{
+  border: 1px solid #0f8be3;
+  color: #0f8be3;
+  background-color: azure;
+}
+
+.btn-outline-normal:hover {
+  background-color: #0f8be3;
+  color: #f1efef;
+}
+
+.btn-new {
+
+  background-color: transparent;
+  margin-bottom:20px ;
+}
+
+

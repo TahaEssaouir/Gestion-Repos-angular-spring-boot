@@ -1,0 +1,17 @@
+.table th{
+  border: solid 2px #6080e4;
+  padding: 15px;
+  background-color: #6080e4;
+}
+
+.table td{
+  border: solid  2px #6080e4;
+  padding: 15px;
+  background-color: #ffffff;
+}
+
+
+.btn-newGrp{
+  margin-bottom: 20px;
+}
+

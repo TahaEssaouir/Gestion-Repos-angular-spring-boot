@@ -1,0 +1,46 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+
+        <div>
+          <h4>List Repos</h4>
+          <div>
+            <button (click)="newRepos()" mat-raised-button class="btn btn-new">
+              New Repos
+            </button>
+          </div>
+        </div>
+
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <table class="table">
+        <thead>
+        <tr>
+          <th>collaborateurs</th> <th>dateDebut</th> <th>dateFin</th><th>terminal</th>
+          <th>fonction</th> <th>typeRepos</th> <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let reposs of repo">
+          <td>{{reposs.collaborateurs}}</td>
+          <td>{{reposs.dateDebut}}</td>
+          <td>{{reposs.dateFin}}</td>
+          <td>{{reposs.terminal}}</td>
+          <td>{{reposs.fonction}}</td>
+          <td>{{reposs.typeRepos}}</td>
+          <td>
+            <button (click)="deleteRepos(reposs.collaborateurs)" mat-raised-button  class="btn btn-outline-danger">
+              Delete
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" showFirstLastButtons></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>
+

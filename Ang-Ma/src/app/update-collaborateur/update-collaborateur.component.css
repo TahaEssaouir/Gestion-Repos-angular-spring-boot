@@ -1,0 +1,30 @@
+mat-form-field {
+  display: block;
+}
+
+.collab-from{
+  width: 650px;
+}
+
+.btn-update{
+  border: 1px solid #6080e4;
+  color: #6080e4;
+  background-color: powderblue;
+}
+
+.btn-update:hover {
+  background-color: #6080e4;
+  color: #f1efef;
+}
+
+
+.btn-save{
+  border: 1px solid #14bf1d;
+  color: #14bf1d;
+  background-color: #277c2c;
+}
+
+.btn-save:hover {
+  background-color: #14bf1d;
+  color: #f1efef;
+}

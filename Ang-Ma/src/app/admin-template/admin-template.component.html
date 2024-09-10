@@ -1,0 +1,46 @@
+<mat-toolbar style="background-color: #007bff; color: white;">
+
+  <button mat-icon-button (click)="myDrawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span style="flex: auto"></span>
+  <button mat-button routerLink="/admin/home">Home</button>
+
+  <button mat-button *ngIf="authService.isAuthenticated">
+    {{authService.username}}
+  </button>
+  <button mat-raised-button (click)="logout()" style="background-color: #e30f0f; color: white;"  >
+    Logout
+  </button>
+
+</mat-toolbar>
+<mat-drawer-container style="background-color: #f0f0f0; color: #333; ">
+  <mat-drawer #myDrawer opened="opened" mode="side" position="start">
+    <mat-list>
+
+      <mat-list-item>
+        <button mat-button routerLink="/admin/collaborateur">
+          <mat-icon>space_dashboard</mat-icon>
+          Collaborateur
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/admin/group">
+          <mat-icon>space_dashboard</mat-icon>
+          Group
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="/admin/repos">
+          <mat-icon>space_dashboard</mat-icon>
+          Repos
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="min-height: 700px" >
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

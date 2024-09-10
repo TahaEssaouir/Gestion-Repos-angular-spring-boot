@@ -1,0 +1,73 @@
+.table th{
+  border: solid 2px #6080e4;
+  padding: 15px;
+  background-color: #6080e4;
+}
+
+.table td{
+  border: solid  2px #6080e4;
+  padding: 15px;
+  background-color: #ffffff;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+}
+
+.btn-new {
+  margin-bottom: 20px;
+}
+
+
+
+.btn-outline-danger {
+  border: 2px solid red;
+  color: red;
+  background-color: transparent;
+}
+
+.btn-outline-danger:hover {
+  background-color: red;
+  color: #ffffff;
+}
+
+.btn-outline-normal{
+  border: 2px solid #0f8be3;
+  color: #0f8be3;
+  background-color: azure;
+}
+
+.btn-outline-normal:hover {
+  background-color: #0f8be3;
+  color: #f1efef;
+}
+
+
+.btn-search{
+  border: 3px solid #0f8be3;
+  color: #0f8be3;
+  background-color: azure;
+  margin-left: 10px; /* Espacement à gauche du bouton */
+  margin-bottom: 10px;
+}
+
+.btn-search:hover {
+  background-color: #0f8be3;
+  color: #f1efef;
+}
+
+
+/* CSS pour le champ input */
+input[type="text"] {
+  width: 250px; /* Définir la largeur */
+  padding: 5px; /* Espacement interne */
+  border: 3px solid #007bff; /* Couleur de la bordure */
+  border-radius:  9px; /* Bordure arrondie */
+  outline: none; /* Supprimer le contour par défaut */
+  font-size: 19px; /* Taille de la police */
+  transition: border-color 0.9ms ; /* Animation de transition */
+}
+
+
+

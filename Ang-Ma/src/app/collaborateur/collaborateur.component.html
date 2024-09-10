@@ -1,0 +1,56 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+
+        <div>
+          <h4>List Collaborateur</h4>
+
+          <div class="neww">
+            <button (click)="newCollaborateur()" mat-raised-button class="btn btn-new">
+              New Collaborateur
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <input type="text" [(ngModel)]="matricule" >
+          <button (click)="searchCollaborateurs()" mat-raised-button class="btn btn-search">
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content >
+      <table class="table">
+        <thead>
+        <tr>
+          <th>collaborateurs</th> <th>matricule</th> <th>nom</th><th>prenom</th>
+          <th>terminal</th> <th>fonction</th> <th>statut</th> <th>action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let collaborateurss of collaborateurs">
+          <td>{{collaborateurss.collaborateurs}}</td>
+          <td>{{collaborateurss.matricule}}</td>
+          <td>{{collaborateurss.nom}}</td>
+          <td>{{collaborateurss.prenom}}</td>
+          <td>{{collaborateurss.terminal}}</td>
+          <td>{{collaborateurss.fonction}}</td>
+          <td>{{collaborateurss.statut}}</td>
+          <td>
+            <button (click)="deleteCollaborateur(collaborateurss.collaborateurs)" mat-raised-button   class="btn btn-outline-danger">
+              Delete
+            </button>
+            <button (click)="handleEdit(collaborateurss.collaborateurs)" mat-raised-button class="btn btn-outline-normal">
+              Update
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20, 100]" showFirstLastButtons></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>
