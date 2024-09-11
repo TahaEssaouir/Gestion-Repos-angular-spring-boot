@@ -43,6 +43,4 @@ export class CollaborateurService {
  /* public getCollaborateurById(collaborateurs: number): Observable<Collaborateur> {
     return this.http.get<Collaborateur>(`${this.apiUrll}/${collaborateurs}`);
   }*/
-
-
 }

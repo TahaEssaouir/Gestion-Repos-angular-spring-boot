@@ -15,7 +15,7 @@ import java.util.List;
 public class CollaborateurController {
     @Autowired
     private CollaborateurService collaborateurService;
-
+//
     @PostMapping("/create")
     public Collaborateur createCollaborateur(@RequestBody Collaborateur collaborateur) {
         return collaborateurService.createCollaborateur(collaborateur);
@@ -27,12 +27,18 @@ public class CollaborateurController {
         return ResponseEntity.ok(collaborateurs);
     }
 
+
     @GetMapping("/search")
     public ResponseEntity<List<Collaborateur>> searchCollaborateurs(@RequestParam String matricule) {
         List<Collaborateur> collaborateurs = collaborateurService.searchCollaborateurs(matricule);
         return ResponseEntity.ok(collaborateurs);
     }
 
+    @GetMapping("/get")
+    public ResponseEntity<List<Collaborateur>> getCollaborateursById(@RequestParam String matricule) {
+        List<Collaborateur> collaborateurs = collaborateurService.getCollaborateursById(matricule);
+        return ResponseEntity.ok(collaborateurs);
+    }
 
     @PutMapping("/update/{collaborateurs}")
     public Collaborateur updateCollaborateur(@PathVariable Long collaborateurs, @RequestBody Collaborateur collaborateurDetails) {

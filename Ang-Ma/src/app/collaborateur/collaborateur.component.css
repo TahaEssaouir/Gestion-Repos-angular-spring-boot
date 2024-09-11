@@ -62,7 +62,7 @@
 input[type="text"] {
   width: 250px; /* Définir la largeur */
   padding: 5px; /* Espacement interne */
-  border: 3px solid #007bff; /* Couleur de la bordure */
+  border: 3px solid #512da8; /* Couleur de la bordure */
   border-radius:  9px; /* Bordure arrondie */
   outline: none; /* Supprimer le contour par défaut */
   font-size: 19px; /* Taille de la police */

@@ -1,5 +1,4 @@
 package net.repos.gestion_reposang.services;
-
 import lombok.AllArgsConstructor;
 import net.repos.gestion_reposang.entities.Collaborateur;
 import net.repos.gestion_reposang.exception.ResourceNotFoundException;
@@ -28,6 +27,9 @@ public class CollaborateurService {
         return collaborateurRepository.findByMatriculeContaining(matricule);
     }
 
+    public List<Collaborateur> getCollaborateursById(String matricule) {
+        return collaborateurRepository.findByMatriculeContaining(matricule);
+    }
 
     public Collaborateur updateCollaborateur(Long collaborateurs, Collaborateur collaborateurDetails) {
         Collaborateur collaborateur = collaborateurRepository.findById(collaborateurs)

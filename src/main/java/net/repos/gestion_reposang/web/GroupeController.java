@@ -1,7 +1,4 @@
 package net.repos.gestion_reposang.web;
-
-
-import net.repos.gestion_reposang.dto.GroupeDto;
 import net.repos.gestion_reposang.entities.Collaborateur;
 import net.repos.gestion_reposang.entities.Groupe;
 import net.repos.gestion_reposang.entities.Repos;
@@ -11,7 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -29,14 +25,15 @@ public class GroupeController {
         return ResponseEntity.ok(group);
     }
 
-    @PostMapping("/creer")
-    public ResponseEntity<String> creerGroupes( @RequestBody GroupeDto groupeDTO) {
-        try {
-            groupeService.creerGroupes(groupeDTO);
-            return ResponseEntity.ok("Groupes créés avec succès");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erreur lors de la création des groupes");
-        }
+    @PostMapping("/create")
+    public Groupe createGroupes(@RequestBody Groupe groupe) {
+        return groupeService.createGroupes(groupe);
+    }
+
+    @DeleteMapping("/delete/{collaborateurs}")
+    public ResponseEntity<?> deleteGroupes(@PathVariable Long collaborateurs) {
+        groupeService.deleteGroupes(collaborateurs);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/suivant")

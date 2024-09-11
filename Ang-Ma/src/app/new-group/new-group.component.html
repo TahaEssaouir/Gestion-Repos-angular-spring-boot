@@ -1,31 +1,37 @@
-<mat-card>
-  <mat-card-title>Créer un Groupe</mat-card-title>
-  <form (click)="onSubmit()">
-    <mat-form-field appearance="fill">
+<div>
+<mat-card [formGroup]="groupFormGroup">
+  <mat-card-header>
+    <mat-card-title> New Groups</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <mat-form-field appearance="outline">
+      <mat-label>collaborateurs</mat-label>
+      <input matInput formControlName="collaborateurs">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
       <mat-label>Terminal</mat-label>
-      <input matInput [(ngModel)]="groupeDto.terminal" name="terminal" required>
+      <mat-select formControlName="terminal">
+        <mat-option value="DTV">DTV</mat-option>
+        <mat-option value="DTP">DTP</mat-option>
+        <mat-option value="DTC">DTC</mat-option>
+      </mat-select>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Fonction</mat-label>
-      <input matInput [(ngModel)]="groupeDto.fonction" name="fonction" required>
+      <input matInput formControlName="fonction">
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Membres Groupe A</mat-label>
-      <input matInput [(ngModel)]="groupeDto.groupeA" name="groupeA" required>
+    <mat-form-field appearance="outline">
+      <mat-label>codeGroupe</mat-label>
+      <input matInput formControlName="codeGroupe">
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Membres Groupe B</mat-label>
-      <input matInput [(ngModel)]="groupeDto.groupeB" name="groupeB" required>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Membres Groupe C</mat-label>
-      <input matInput [(ngModel)]="groupeDto.groupeC" name="groupeC" required>
-    </mat-form-field>
-
-    <button mat-raised-button color="primary" type="submit">Créer</button>
-  </form>
+  </mat-card-content>
+  <mat-card-actions>
+  <button (click)="createGroup()" mat-raised-button color="primary" type="submit">Create</button>
+  </mat-card-actions>
 </mat-card>
+</div>

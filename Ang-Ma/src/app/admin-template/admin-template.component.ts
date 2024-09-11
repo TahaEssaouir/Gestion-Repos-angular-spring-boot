@@ -8,7 +8,7 @@ import { AuthenticationService } from "../services/authentication.service";
   styleUrl: './admin-template.component.css'
 })
 export class AdminTemplateComponent {
-  
+
   constructor(public  authService: AuthenticationService) {
     }
 

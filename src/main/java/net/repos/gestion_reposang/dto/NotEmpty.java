@@ -1,5 +1,5 @@
-package net.repos.gestion_reposang.dto;
+/*package net.repos.gestion_reposang.dto;
 
 public @interface NotEmpty {
     String message();
-}
+}*/

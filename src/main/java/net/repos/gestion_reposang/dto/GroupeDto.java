@@ -1,4 +1,4 @@
-package net.repos.gestion_reposang.dto;
+/*package net.repos.gestion_reposang.dto;
 import lombok.*;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.data.repository.NoRepositoryBean;
@@ -8,7 +8,7 @@ import java.util.List;
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter @ToString @Builder @Component
 public  class GroupeDto {
 
-    private GroupeDto groupeDTO;
+
 
    @NotBlank(message = "Terminal ne peut pas être vide")
     private String terminal;
@@ -67,3 +67,4 @@ public  class GroupeDto {
     }
 
 }
+*/

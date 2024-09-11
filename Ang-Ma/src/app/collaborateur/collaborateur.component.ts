@@ -55,7 +55,6 @@ export class CollaborateurComponent implements OnInit {
       });
     }
 
-
   searchCollaborateurs() {
     this.collaborateurService.searchCollaborateurs(this.matricule).subscribe({
       next: value => {

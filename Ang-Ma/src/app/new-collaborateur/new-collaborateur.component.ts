@@ -32,7 +32,6 @@ export class NewCollaborateurComponent implements OnInit {
         error: err => {
           console.log(err);
         }
-      }
-    );
+      });
   }
 }

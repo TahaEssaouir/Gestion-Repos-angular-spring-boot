@@ -1,5 +1,4 @@
 package net.repos.gestion_reposang.exception;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
@@ -16,6 +15,8 @@ public class ResourceNotFoundException extends RuntimeException {
     private String fonction;
 
     private String statut;
+
+    private String codeGroupe;
 
     public ResourceNotFoundException(String collaborateurNotFound, String string) {
     }
@@ -44,7 +45,9 @@ public class ResourceNotFoundException extends RuntimeException {
         return statut;
     }
 
-    public ResourceNotFoundException(String message, String matricule, String nom, String prenom, String terminal, String fonction, String statut) {
+    public String getCodeGroupe() {return codeGroupe;}
+
+    public ResourceNotFoundException(String message, String matricule, String nom, String prenom, String terminal, String fonction, String statut, String codeGroupe) {
         super(String.format("%s not found with %s : '%s'", message, nom, prenom, terminal, fonction));
         this.matricule = matricule;
         this.nom = nom;
@@ -52,5 +55,6 @@ public class ResourceNotFoundException extends RuntimeException {
         this.terminal = terminal;
         this.fonction = fonction;
         this.statut = statut;
+        this.codeGroupe = codeGroupe;
     }
 }

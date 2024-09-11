@@ -9,18 +9,15 @@ public class Groupe  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long collaborateurs;
-
     private String terminal;
     private String fonction;
-    // private String codeGroupe;
+    private String codeGroupe;
 
-    @ElementCollection
-    private List<Long> membres;
 
-    public Groupe(String terminal, String fonction, List<Long> membres) {
+    public Groupe(String terminal, String fonction,String codeGroupe ) {
         this.terminal = terminal;
         this.fonction = fonction;
-        this.membres = membres;
+        this.codeGroupe = codeGroupe;
     }
 
     public Long getCollaborateurs() {
@@ -47,11 +44,9 @@ public class Groupe  {
         this.fonction = fonction;
     }
 
-    public List<Long> getMembres() {
-        return membres;
-    }
+    public String getCodeGroupe() {return codeGroupe;}
 
-    public void setMembres(List<Long> membres) {
-        this.membres = membres;
-    }
+    public void setCodeGroupe(String codeGroupe) {this.codeGroupe = codeGroupe;}
+
+
 }

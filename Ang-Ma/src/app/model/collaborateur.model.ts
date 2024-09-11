@@ -8,7 +8,15 @@ export interface Collaborateur {
   statut: string;
 }
 
+export interface Groups{
+  collaborateurs:number;
+  terminal: string;
+  fonction: string;
+  codeGroupe: string;
 
+
+
+}
 
 export interface Repo{
   collaborateurs:number;

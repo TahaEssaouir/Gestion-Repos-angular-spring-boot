@@ -2,13 +2,11 @@
   <mat-card>
     <mat-card-header>
       <mat-card-title>
-
         <div>
           <h4>List Groups</h4>
 
-          <button mat-raised-button  (click)="newGroups()" class="btn btn-newGrp">Add</button>
+          <button mat-raised-button  (click)="newGroups()" class="btn btn-newGrp">New Group</button>
         </div>
-
       </mat-card-title>
     </mat-card-header>
 
@@ -16,7 +14,7 @@
       <table class="table">
         <thead>
         <tr>
-          <th>collaborateurs</th> <th>terminal</th> <th>fonction</th>  <th>groupeA</th> <th>groupeB</th> <th>groupeC</th>
+          <th>collaborateurs</th> <th>terminal</th> <th>fonction</th>  <th>codeGroupe</th>
         </tr>
         </thead>
         <tbody>
@@ -24,10 +22,11 @@
           <td>{{groupess.collaborateurs}}</td>
           <td>{{groupess.terminal}}</td>
           <td>{{groupess.fonction}}</td>
-          <td>{{groupess.groupeA}}</td>
-          <td>{{groupess.groupeB}}</td>
-          <td>{{groupess.groupeC}}</td>
+          <td>{{groupess.codeGroupe}}</td>
           <td>
+            <button (click)="deleteGroups(groupess.collaborateurs)" mat-raised-button   class="btn btn-outline-danger">
+              Delete
+            </button>
 
           </td>
         </tr>
@@ -37,7 +36,5 @@
     </mat-card-content>
   </mat-card>
 </div>
-
-
 
 

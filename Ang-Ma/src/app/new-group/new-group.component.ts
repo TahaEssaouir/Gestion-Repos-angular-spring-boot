@@ -2,6 +2,7 @@ import {Component, NgIterable, OnInit,} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {GroupsService} from "../services/groups.service";
 
 
 @Component({
@@ -9,27 +10,30 @@ import {Router} from "@angular/router";
   templateUrl: './new-group.component.html',
   styleUrl: './new-group.component.css'
 })
-export class NewGroupComponent   {
-  constructor(private http: HttpClient, private router: Router) {}
+export class NewGroupComponent implements OnInit{
+  groupFormGroup!: FormGroup;
+  constructor(private fbG : FormBuilder,private groupsService : GroupsService) {}
 
+  ngOnInit() {
+    this.groupFormGroup = this.fbG.group({
+      collaborateurs: ['', Validators.required],
+      terminal: ['', Validators.required],
+      fonction: ['', Validators.required],
+      codeGroupe: ['', Validators.required],
+    });
+  }
 
-  groupeDto = {
-    terminal: '',
-    fonction: '',
-    groupeA: '',
-    groupeB: '',
-    groupeC: ''
-  };
-/*
-  onSubmit(){
-    this.router.navigateByUrl('/admin/new-group');
-  }*/
-
-
-  onSubmit() {
-    this.http.post('/api/groupes/creer', this.groupeDto).subscribe({
-      next: () => this.router.navigate(['/groupes']),
-      error: (error) => console.error('Erreur lors de la création du groupe', error)
+  createGroup() {
+    const groupData = this.groupFormGroup.value;
+    this.groupsService.createGroup(groupData).subscribe({
+      next: value => {
+        alert("Groups saved successfully");
+      },
+      error: err => {
+        console.log(err);
+      }
     });
   }
 }
+
+
