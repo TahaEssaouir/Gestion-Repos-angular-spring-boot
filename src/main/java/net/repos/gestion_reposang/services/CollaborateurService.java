@@ -33,7 +33,7 @@ public class CollaborateurService {
 
     public Collaborateur updateCollaborateur(Long collaborateurs, Collaborateur collaborateurDetails) {
         Collaborateur collaborateur = collaborateurRepository.findById(collaborateurs)
-                .orElseThrow(() -> new ResourceNotFoundException("Collaborateur not found",collaborateurs.toString()));
+                .orElseThrow(() -> new ResourceNotFoundException("Collaborateur not found",collaborateurs.toString()) );
         collaborateur.setNom(collaborateurDetails.getNom());
         collaborateur.setPrenom(collaborateurDetails.getPrenom());
         collaborateur.setTerminal(collaborateurDetails.getTerminal());

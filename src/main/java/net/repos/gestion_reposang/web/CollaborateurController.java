@@ -1,4 +1,5 @@
 package net.repos.gestion_reposang.web;
+
 import net.repos.gestion_reposang.entities.Collaborateur;
 import net.repos.gestion_reposang.services.CollaborateurService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,5 +49,6 @@ public class CollaborateurController {
         collaborateurService.deleteCollaborateur(collaborateurs);
         return ResponseEntity.ok().build();
     }
+
 
 }

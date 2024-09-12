@@ -17,5 +17,5 @@ public interface CollaborateurRepository extends JpaRepository<Collaborateur, Lo
     List<Collaborateur> findByMatriculeContaining(String matricule); //chercher un Collaborateur par son matricule
 
 
-    //List  <Collaborateur> findByMatricule(String matricule);  //chercher un Collaborateur par son matricule
+    List  <Collaborateur> findByMatricule(String matricule);  //chercher un Collaborateur par son matricule
 }
