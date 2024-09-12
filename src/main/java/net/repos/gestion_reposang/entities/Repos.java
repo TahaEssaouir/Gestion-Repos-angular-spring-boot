@@ -3,6 +3,8 @@ package net.repos.gestion_reposang.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -13,13 +15,8 @@ public class Repos {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long collaborateurs;
 
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date dateDebut;
-
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date dateFin;
+    private LocalDate dateDebut;
+    private LocalDate dateFin;
 
     private String terminal;
     private String fonction;

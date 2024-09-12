@@ -1,12 +1,7 @@
 package net.repos.gestion_reposang.entities;
-
-
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.List;
-
-
 @Entity
 @NoArgsConstructor @AllArgsConstructor @Getter @Setter  @ToString @Builder
 public class Collaborateur {

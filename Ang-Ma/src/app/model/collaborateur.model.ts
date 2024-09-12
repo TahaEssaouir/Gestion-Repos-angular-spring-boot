@@ -14,8 +14,6 @@ export interface Groups{
   fonction: string;
   codeGroupe: string;
 
-
-
 }
 
 export interface Repo{

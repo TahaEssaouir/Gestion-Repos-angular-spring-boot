@@ -6,25 +6,106 @@ mat-form-field {
   width: 650px;
 }
 
-.btn-update{
-  border: 1px solid #6080e4;
-  color: #6080e4;
-  background-color: powderblue;
+/* Main container for centering the form */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-.btn-update:hover {
-  background-color: #6080e4;
-  color: #f1efef;
-}
-
-
-.btn-save{
-  border: 1px solid #14bf1d;
-  color: #14bf1d;
-  background-color: #277c2c;
+.btn-save {
+  background-color: #3f51b5;
+  color: white;
+  padding: 10px 20px;
 }
 
 .btn-save:hover {
-  background-color: #14bf1d;
-  color: #f1efef;
+  background-color: #303f9f;
+}
+
+
+/* The mat-card containing the form */
+mat-card {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff; /* Ensure a white background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 12px; /* Rounded corners for a modern look */
+  border: 1px solid #e0e0e0;
+}
+
+/* Card header styling */
+mat-card-header {
+  background-color: #f0f4f8; /* Light gray background for the header */
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 12px 12px 0 0; /* Rounded top corners */
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #424242; /* Darker gray for title */
+  text-align: center;
+}
+
+/* Form field styling */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Input and select box borders */
+.mat-form-field-outline-start, .mat-form-field-outline-end {
+  border-width: 1.5px !important;
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  border-color: #424242 !important; /* Neutral gray for form field outline */
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  border-color: #3f51b5 !important; /* Dark blue when focused */
+}
+
+/* Button styling */
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end; /* Align button to the right */
+  padding-top: 16px;
+}
+
+button[type="submit"] {
+  background-color: #3f51b5; /* Primary blue color for button */
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #303f9f; /* Darker blue on hover */
+}
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  mat-card {
+    width: 100%;
+  }
+
+  mat-form-field {
+    margin-bottom: 16px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+  }
 }

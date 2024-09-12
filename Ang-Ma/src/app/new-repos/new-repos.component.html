@@ -1,22 +1,22 @@
-<div>
+<div class="container">
   <mat-card [formGroup]="reposFormGroup" class="collab-from">
     <mat-card-header>
       <mat-card-title> New Repos</mat-card-title>
     </mat-card-header>
     <mat-card-content>
+
       <mat-form-field appearance="outline">
-        <mat-label> collaborateurs</mat-label>
+        <mat-label>collaborateurs</mat-label>
         <input matInput formControlName="collaborateurs">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label> dateDebut</mat-label>
+        <mat-label>dateDebut</mat-label>
         <input matInput formControlName="dateDebut">
       </mat-form-field>
 
-
       <mat-form-field appearance="outline">
-        <mat-label> dateFin</mat-label>
+        <mat-label>dateFin</mat-label>
         <input matInput formControlName="dateFin">
       </mat-form-field>
 
@@ -31,18 +31,37 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Fonction</mat-label>
-        <input matInput formControlName="fonction">
+        <mat-select formControlName="fonction">
+          <mat-option value="Conducteurs Engins Levage">Conducteurs Engins Levage</mat-option>
+          <mat-option value="Chef d’Escale">Chef d’Escale</mat-option>
+          <mat-option value="Agent de Parc">Agent de Parc</mat-option>
+          <mat-option value="Chef d’équipe">Chef d’équipe</mat-option>
+          <mat-option value="Chef de Zone">Chef de Zone</mat-option>
+          <mat-option value="Magasinier">Magasinier</mat-option>
+          <mat-option value="Pointeur">Pointeur</mat-option>
+          <mat-option value="Agent de Manutention">Agent de Manutention</mat-option>
+          <mat-option value=" Conducteur Engins Spécialisés"> Conducteur Engins Spécialisés</mat-option>
+          <mat-option value=" Conducteur Engins Roulants">Conducteur Engins Roulants</mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>typeRepos</mat-label>
-        <input matInput formControlName="typeRepos">
+        <mat-select formControlName="typeRepos">
+          <mat-option value="Congé">Congé</mat-option>
+          <mat-option value="Formation">Formation</mat-option>
+          <mat-option value="Détachement">Détachement</mat-option>
+          <mat-option value="Absence Maladie">Absence Maladie</mat-option>
+          <mat-option value="Autre">Autre</mat-option>
+        </mat-select>
       </mat-form-field>
+
+
 
     </mat-card-content>
     <mat-card-actions>
       <button (click)="saveRepos()"  mat-raised-button class="btn btn-save">
-        Save
+        Create
       </button>
     </mat-card-actions>
   </mat-card>

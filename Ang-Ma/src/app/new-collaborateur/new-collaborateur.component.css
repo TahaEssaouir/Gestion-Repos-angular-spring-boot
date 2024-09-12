@@ -6,14 +6,10 @@ mat-form-field {
   width: 650px;
 }
 
-.collab-form {
-  width: 100%;
-  max-width: 800px; /* Set a max width for the form */
-  margin: 20px auto; /* Center the form on the page */
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  background-color: #fff; /* Ensure a white background */
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
 mat-card-header {

@@ -25,7 +25,8 @@ export class UpdateCollaborateurComponent implements OnInit {
     this.collaborateurService.getAllCollaborateurs(this.collaborateurs).subscribe({
       next: (collaborateurss) => {
         this.collaborateurFormGroup=this.fb.group({
-         matricule: ['', Validators.required],    // Champ pour le matricule
+          collaborateurs: ['', Validators.required],    // Champ pour le collaborateurs
+          matricule: ['', Validators.required],    // Champ pour le matricule
           nom: ['', Validators.required],        // Champ pour le nom
           prenom: ['', Validators.required],     // Champ pour le prénom
           terminal: ['', Validators.required],   // Champ pour le terminal

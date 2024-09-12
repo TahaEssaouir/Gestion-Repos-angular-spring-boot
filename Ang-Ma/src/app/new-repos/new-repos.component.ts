@@ -5,7 +5,8 @@ import {ReposService} from "../services/repos.service";
 @Component({
   selector: 'app-new-repos',
   templateUrl: './new-repos.component.html',
-  styleUrl: './new-repos.component.css'
+  styleUrl: './new-repos.component.css',
+
 })
 export class NewReposComponent implements OnInit {
   reposFormGroup!: FormGroup;

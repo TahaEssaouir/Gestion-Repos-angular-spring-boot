@@ -1,9 +1,10 @@
-<div>
+<div class="container">
   <mat-card [formGroup]="collaborateurFormGroup" class="collab-from">
     <mat-card-header>
       <mat-card-title> New Collaborateur</mat-card-title>
     </mat-card-header>
     <mat-card-content>
+
       <mat-form-field appearance="outline">
         <mat-label> Matricule</mat-label>
         <input matInput formControlName="matricule">
@@ -30,7 +31,18 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Fonction</mat-label>
-        <input matInput formControlName="fonction">
+        <mat-select formControlName="fonction">
+          <mat-option value="Conducteurs Engins Levage">Conducteurs Engins Levage</mat-option>
+          <mat-option value="Chef d’Escale">Chef d’Escale</mat-option>
+          <mat-option value="Agent de Parc">Agent de Parc</mat-option>
+          <mat-option value="Chef d’équipe">Chef d’équipe</mat-option>
+          <mat-option value="Chef de Zone">Chef de Zone</mat-option>
+          <mat-option value="Magasinier">Magasinier</mat-option>
+          <mat-option value="Pointeur">Pointeur</mat-option>
+          <mat-option value="Agent de Manutention">Agent de Manutention</mat-option>
+          <mat-option value=" Conducteur Engins Spécialisés"> Conducteur Engins Spécialisés</mat-option>
+          <mat-option value=" Conducteur Engins Roulants">Conducteur Engins Roulants</mat-option>
+        </mat-select>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
