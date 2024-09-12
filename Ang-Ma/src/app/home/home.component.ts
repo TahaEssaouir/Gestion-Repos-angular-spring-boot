@@ -9,7 +9,6 @@ import {CollaborateurService} from "../services/collaborateur.service";
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit{
-
   constructor(private collaborateurService: CollaborateurService,) {}
 
   ngOnInit(): void {

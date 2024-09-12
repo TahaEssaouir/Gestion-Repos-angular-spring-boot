@@ -1,5 +1,3 @@
-
-
 .table {
   width: 100%;
   margin-top: 20px;
@@ -18,7 +16,7 @@
 }
 
 .table tbody tr:hover {
-  background-color: #f1f1f1;
+  background-color:  #e3f2fa;
 }
 
 .title-container {
@@ -40,17 +38,12 @@
 }
 
 .btn-outline-danger {
-  border: 2px solid red;
+  border: 2px solid #d32f2f;
    background-color: #e57373;
   color: white;
 }
 
 .btn-outline-danger:hover {
-  background-color: red;
+  background-color: #d32f2f;
   color: #ffffff;
 }
-
-
-
-
-
