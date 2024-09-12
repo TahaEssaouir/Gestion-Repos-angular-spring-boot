@@ -6,13 +6,79 @@ mat-form-field {
   width: 650px;
 }
 
-.btn-save{
-  border: 1px solid #14bf1d;
-  color: #14bf1d;
-  background-color: aquamarine;
+.collab-form {
+  width: 100%;
+  max-width: 800px; /* Set a max width for the form */
+  margin: 20px auto; /* Center the form on the page */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff; /* Ensure a white background */
+}
+
+mat-card-header {
+  background-color: #f0f4f8;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 8px 8px 0 0;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+mat-select, input[matInput] {
+  font-size: 1rem;
+}
+
+.mat-form-field-outline-start, .mat-form-field-outline-end {
+  border-width: 1px !important; /* Make input borders a bit thinner */
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  border-color: #3f51b5 !important; /* Primary color for form field outline */
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  border-color: #3f51b5 !important;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end; /* Align the button to the right */
+  padding-top: 16px;
+}
+
+.btn-save {
+  background-color: #3f51b5;
+  color: white;
+  padding: 10px 20px;
 }
 
 .btn-save:hover {
-  background-color: #14bf1d;
-  color: #ffffff;
+  background-color: #303f9f;
 }
+
+@media (max-width: 768px) {
+  .collab-form {
+    padding: 15px;
+  }
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .btn-save {
+    width: 100%;
+    margin-top: 16px;
+  }
+}
+
