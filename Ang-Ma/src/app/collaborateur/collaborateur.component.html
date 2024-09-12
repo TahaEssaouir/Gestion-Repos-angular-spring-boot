@@ -2,12 +2,11 @@
   <mat-card>
     <mat-card-header>
       <mat-card-title>
-
         <div>
           <h4>List Collaborateur</h4>
 
           <div class="neww">
-            <button (click)="newCollaborateur()" mat-raised-button class="btn btn-new">
+            <button (click)="newCollaborateur()" mat-raised-button class="btn btn-newCll">
               New Collaborateur
             </button>
           </div>
@@ -26,8 +25,8 @@
       <table class="table">
         <thead>
         <tr>
-          <th>collaborateurs</th> <th>matricule</th> <th>nom</th><th>prenom</th>
-          <th>terminal</th> <th>fonction</th> <th>statut</th> <th>action</th>
+          <th>Collaborateurs</th> <th>Matricule</th> <th>Nom</th><th>Prenom</th>
+          <th>Terminal</th> <th>Fonction</th> <th>Statut</th> <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -41,9 +40,11 @@
           <td>{{collaborateurss.statut}}</td>
           <td>
             <button (click)="deleteCollaborateur(collaborateurss.collaborateurs)" mat-raised-button   class="btn btn-outline-danger">
+              <mat-icon>delete</mat-icon>
               Delete
             </button>
             <button (click)="handleEdit(collaborateurss.collaborateurs)" mat-raised-button class="btn btn-outline-normal">
+              <mat-icon>edit</mat-icon>
               Update
             </button>
           </td>

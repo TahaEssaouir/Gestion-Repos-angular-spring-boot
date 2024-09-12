@@ -14,7 +14,7 @@
       <table class="table">
         <thead>
         <tr>
-          <th>collaborateurs</th> <th>terminal</th> <th>fonction</th>  <th>codeGroupe</th>
+          <th>Collaborateurs</th> <th>Terminal</th> <th>Fonction</th>  <th>codeGroupe</th> <th>Action</th> 
         </tr>
         </thead>
         <tbody>
@@ -25,6 +25,7 @@
           <td>{{groupess.codeGroupe}}</td>
           <td>
             <button (click)="deleteGroups(groupess.collaborateurs)" mat-raised-button   class="btn btn-outline-danger">
+              <mat-icon>delete</mat-icon>
               Delete
             </button>
 
