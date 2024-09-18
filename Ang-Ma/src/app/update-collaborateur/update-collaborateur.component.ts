@@ -13,7 +13,6 @@ export class UpdateCollaborateurComponent implements OnInit {
   collaborateurFormGroup!: FormGroup;
   collaborateurs!: number;
 
-
   constructor(private fb: FormBuilder,
               private collaborateurService: CollaborateurService,
               private route: ActivatedRoute) {
@@ -22,10 +21,10 @@ export class UpdateCollaborateurComponent implements OnInit {
 
   ngOnInit() {
     this.collaborateurs = this.route.snapshot.params['collaborateurs'];// Récupérer l'ID du collaborateur
-    this.collaborateurService.getAllCollaborateurs(this.collaborateurs).subscribe({
+    this.collaborateurService.getCollaborateurById(this.collaborateurs).subscribe({
       next: (collaborateurss) => {
         this.collaborateurFormGroup=this.fb.group({
-          collaborateurs: ['', Validators.required],    // Champ pour le collaborateurs
+          collaborateurs: this.fb.control(collaborateurss.collaborateurs, Validators.required),// Champ pour le collaborateurs
           matricule: ['', Validators.required],    // Champ pour le matricule
           nom: ['', Validators.required],        // Champ pour le nom
           prenom: ['', Validators.required],     // Champ pour le prénom
@@ -39,6 +38,14 @@ export class UpdateCollaborateurComponent implements OnInit {
       }
     });
   }
+/*
+  getCollaborateurById() {
+    this.collaborateurService.getCollaborateurById(this.collaborateurs).subscribe({
+      next: value => {
+        this.collaborateurs = value;
+      }
+    })
+  }*/
 
   updateCollaborateur() {
     this.collaborateurs = this.route.snapshot.params['collaborateurs'];// Récupérer l'ID du collaborateur

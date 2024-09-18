@@ -16,20 +16,28 @@
     </mat-card-header>
 
     <mat-card-content>
+      <div>
+        <button (click)="exportToExcel()" mat-raised-button class="btn-export">
+          Download File
+        </button>
+      </div>
       <table class="table">
         <thead>
         <tr>
-          <th>Collaborateurs</th> <th>DateDebut</th> <th>DateFin</th><th>Terminal</th>
-          <th>Fonction</th> <th>TypeRepos</th> <th>Action</th>
+          <th>Collaborateurs</th> <th>Nom</th> <th>Matricule</th> <th>DateDebut</th>
+          <th>DateFin</th><th>Terminal</th> <th>Fonction</th> <th> codeGroupe</th> <th>TypeRepos</th> <th>Action</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let reposs of repo">
           <td>{{reposs.collaborateurs}}</td>
+          <td>{{reposs.nom}}</td>
+          <td>{{reposs.matricule}}</td>
           <td>{{reposs.dateDebut}}</td>
           <td>{{reposs.dateFin}}</td>
           <td>{{reposs.terminal}}</td>
           <td>{{reposs.fonction}}</td>
+          <td>{{reposs.codeGroupe}}</td>
           <td>{{reposs.typeRepos}}</td>
           <td>
             <button (click)="deleteRepos(reposs.collaborateurs)" mat-raised-button  class="btn btn-outline-danger">

@@ -34,9 +34,8 @@ import {ReposComponent} from "./repos/repos.component";
 import { NewReposComponent } from './new-repos/new-repos.component';
 import {MatDatepickerInput, MatDatepickerModule, MatDatepickerToggle} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
-import {AuthGuard} from "./guards/auth.guard";
+//import {authGuard} from "./guards/auth.guard";
 import { DragDropModule} from "@angular/cdk/drag-drop";
-
 
 @NgModule({
   declarations: [
@@ -87,7 +86,7 @@ import { DragDropModule} from "@angular/cdk/drag-drop";
     DragDropModule,
   ],
   providers: [
-    provideAnimationsAsync(),//AuthGuard
+    provideAnimationsAsync(),//authGuard
   ],
 
   bootstrap: [AppComponent]

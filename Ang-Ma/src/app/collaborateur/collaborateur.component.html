@@ -13,8 +13,8 @@
         </div>
 
         <div>
-          <input type="text" [(ngModel)]="matricule" >
-          <button (click)="searchCollaborateurs()" mat-raised-button class="btn btn-search">
+          <input type="text" [(ngModel)]="matricule" Search>
+          <button (click)="searchCollaborateurs()" mat-raised-button class="btn btn-search" >
             <mat-icon>search</mat-icon>
           </button>
         </div>
@@ -30,7 +30,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let collaborateurss of collaborateurs">
+        <tr *ngFor="let collaborateurss of collaborateurs ">
           <td>{{collaborateurss.collaborateurs}}</td>
           <td>{{collaborateurss.matricule}}</td>
           <td>{{collaborateurss.nom}}</td>
@@ -43,7 +43,7 @@
               <mat-icon>delete</mat-icon>
               Delete
             </button>
-            <button (click)="handleEdit(collaborateurss.collaborateurs)" mat-raised-button class="btn btn-outline-normal">
+            <button (click)="handleEdit(collaborateurss)" mat-raised-button class="btn btn-outline-normal">
               <mat-icon>edit</mat-icon>
               Update
             </button>

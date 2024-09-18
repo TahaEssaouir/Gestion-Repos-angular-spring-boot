@@ -30,20 +30,44 @@
 }
 
 .btn {
-  margin-right: 8px;
+  margin-bottom: 5px;
 }
 
 .btn-newREp {
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 
 .btn-outline-danger {
   border: 2px solid #d32f2f;
-   background-color: #e57373;
+  background-color: #e57373;
   color: white;
 }
 
 .btn-outline-danger:hover {
   background-color: #d32f2f;
   color: #ffffff;
+}
+
+
+.btn-export {
+  margin-top: 20px; /* Espace entre le bouton et le reste du contenu */
+  padding: 10px 20px; /* Taille du bouton */
+  background-color: #3f51b5; /* Couleur de fond bleue (mat-primary) */
+  color: white; /* Couleur du texte */
+  font-size: 16px; /* Taille du texte */
+  font-weight: bold; /* Texte en gras */
+  text-transform: uppercase; /* Texte en majuscule */
+  border-radius: 4px; /* Bordures arrondies */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre pour donner de la profondeur */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Animation sur le hover */
+}
+
+.btn-export:hover {
+  background-color: #283593; /* Couleur de fond plus sombre au survol */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Ombre plus grande au survol */
+}
+
+.btn-export:active {
+  background-color: #1a237e; /* Couleur de fond encore plus sombre quand le bouton est cliqué */
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); /* Ombre réduite pendant l'action de clic */
 }

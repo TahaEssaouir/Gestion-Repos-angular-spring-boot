@@ -11,6 +11,16 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="nom">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Matricule</mat-label>
+        <input matInput formControlName="matricule">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
         <mat-label>dateDebut</mat-label>
         <input matInput formControlName="dateDebut">
       </mat-form-field>
@@ -44,6 +54,16 @@
           <mat-option value=" Conducteur Engins Roulants">Conducteur Engins Roulants</mat-option>
         </mat-select>
       </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>codeGroupe</mat-label>
+        <mat-select formControlName="codeGroupe">
+          <mat-option value="A">A</mat-option>
+          <mat-option value="B">B</mat-option>
+          <mat-option value="C">C</mat-option>
+        </mat-select>
+      </mat-form-field>
+
 
       <mat-form-field appearance="outline">
         <mat-label>typeRepos</mat-label>

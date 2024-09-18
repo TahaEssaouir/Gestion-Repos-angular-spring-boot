@@ -12,7 +12,7 @@ import {UpdateCollaborateurComponent} from "./update-collaborateur/update-collab
 import {NewGroupComponent} from "./new-group/new-group.component";
 import {NewReposComponent} from "./new-repos/new-repos.component";
 import {AdminTemplateComponent} from "./admin-template/admin-template.component";
-//import {AuthGuard} from "./guards/auth.guard";
+import {AuthGuard} from "./guards/auth.guard";
 
 
 
@@ -20,9 +20,10 @@ const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminTemplateComponent ,
- // canActivate: [AuthGuard],
+  canActivate: [AuthGuard],
     children: [
       {path: 'home', component: HomeComponent},
+      {path: 'dashboard', component: DashboardComponent},
       {path: 'collaborateur', component: CollaborateurComponent},
       {path: 'group', component: GroupComponent},
       {path: 'repos', component: ReposComponent},

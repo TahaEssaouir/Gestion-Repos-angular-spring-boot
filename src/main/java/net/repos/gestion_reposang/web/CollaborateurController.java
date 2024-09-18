@@ -1,20 +1,18 @@
 package net.repos.gestion_reposang.web;
-
 import net.repos.gestion_reposang.entities.Collaborateur;
 import net.repos.gestion_reposang.services.CollaborateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/Collaborateurs")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CollaborateurController {
+
     @Autowired
     private CollaborateurService collaborateurService;
-//
     @PostMapping("/create")
     public Collaborateur createCollaborateur(@RequestBody Collaborateur collaborateur) {
         return collaborateurService.createCollaborateur(collaborateur);
@@ -34,14 +32,15 @@ public class CollaborateurController {
     }
 
     @GetMapping("/get")
-    public ResponseEntity<List<Collaborateur>> getCollaborateursById(@RequestParam String matricule) {
-        List<Collaborateur> collaborateurs = collaborateurService.getCollaborateursById(matricule);
-        return ResponseEntity.ok(collaborateurs);
+    public ResponseEntity<List<Collaborateur>> getCollaborateursById(@RequestParam Long collaborateurs) {
+        List<Collaborateur> collaborateur = collaborateurService.getCollaborateursById(collaborateurs);
+        return ResponseEntity.ok(collaborateur);
     }
 
     @PutMapping("/update/{collaborateurs}")
-    public Collaborateur updateCollaborateur(@PathVariable Long collaborateurs, @RequestBody Collaborateur collaborateurDetails) {
-        return collaborateurService.updateCollaborateur(collaborateurs, collaborateurDetails);
+    public Collaborateur updateCollaborateur(@RequestParam String matricule,@RequestParam String nom,@RequestParam String prenom,
+                                             @RequestParam String terminal,@RequestParam String fonction,@RequestParam String statut,@PathVariable Long collaborateurs) {
+        return collaborateurService.updateCollaborateur(matricule,nom,prenom,terminal,fonction,statut,collaborateurs);
     }
 
     @DeleteMapping("/delete/{collaborateurs}")
@@ -49,6 +48,4 @@ public class CollaborateurController {
         collaborateurService.deleteCollaborateur(collaborateurs);
         return ResponseEntity.ok().build();
     }
-
-
 }

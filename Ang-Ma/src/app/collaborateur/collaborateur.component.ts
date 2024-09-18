@@ -3,6 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { CollaborateurService } from "../services/collaborateur.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {Collaborateur} from "../model/collaborateur.model";
 
 @Component({
   selector: 'app-collaborateur',
@@ -63,8 +64,9 @@ export class CollaborateurComponent implements OnInit {
     })
   }
 
-  handleEdit(collaborateurs: number) {
-    this.router.navigateByUrl(`/admin/update-collaborateur/${collaborateurs}`);
+  handleEdit(collaborateurss: Collaborateur) {
+    this.router.navigateByUrl(`/admin/update-collaborateur/${collaborateurss.collaborateurs}`);
   }
+
 }
 

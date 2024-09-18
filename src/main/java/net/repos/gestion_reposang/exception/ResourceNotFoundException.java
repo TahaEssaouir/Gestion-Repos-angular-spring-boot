@@ -18,7 +18,7 @@ public class ResourceNotFoundException extends RuntimeException {
 
     private String codeGroupe;
 
-    public ResourceNotFoundException(String collaborateurNotFound, String string) {
+    public ResourceNotFoundException(String collaborateurNotFound, String detail) {
     }
 
     public String getMatricule() {

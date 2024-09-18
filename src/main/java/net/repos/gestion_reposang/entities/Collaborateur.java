@@ -8,17 +8,10 @@ public class Collaborateur {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long collaborateurs;
-
     private String matricule;
-
     private String nom;
-
     private String prenom;
-
     private String terminal;
-
     private String fonction;
-
     private String statut;
-
 }

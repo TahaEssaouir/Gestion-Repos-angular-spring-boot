@@ -5,7 +5,6 @@
   </button>
   <span style="flex: auto"></span>
   <button mat-button routerLink="/admin/home">Home</button>
-
   <button mat-button *ngIf="authService.isAuthenticated">
     {{authService.username}}
   </button>

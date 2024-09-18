@@ -16,10 +16,13 @@ export class NewReposComponent implements OnInit {
   ngOnInit() {
     this.reposFormGroup=this.fb.group({
       collaborateurs: ['', Validators.required],
+      nom: ['', Validators.required],
+      matricule: ['', Validators.required],
       dateDebut: ['', Validators.required],
       dateFin: ['', Validators.required],
       terminal: ['', Validators.required],
       fonction: ['', Validators.required],
+      codeGroupe: ['', Validators.required],
       typeRepos: ['', Validators.required],
     })
   }
