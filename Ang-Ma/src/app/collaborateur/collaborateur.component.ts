@@ -64,9 +64,10 @@ export class CollaborateurComponent implements OnInit {
     })
   }
 
-  handleEdit(collaborateurss: Collaborateur) {
-    this.router.navigateByUrl(`/admin/update-collaborateur/${collaborateurss.collaborateurs}`);
+  updateCollaborateur(collaborateurss: Collaborateur) {
+    this.router.navigate(['/admin/update-collaborateur', collaborateurss.collaborateurs]);
   }
+
 
 }
 

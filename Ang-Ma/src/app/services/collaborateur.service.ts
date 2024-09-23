@@ -14,7 +14,7 @@ export class CollaborateurService {
   private apiUrlll = `${environment.backendHost}/api/Collaborateurs/delete/`;
   private apiUur  = `${environment.backendHost}/api/Collaborateurs/search?matricule=`;
   private apiUr = `${environment.backendHost}/api/Collaborateurs/update/`;
-  private apiUu = `${environment.backendHost}/api/Collaborateurs/get/{collaborateurs}?collaborateurs=`;
+  private apiUu = `${environment.backendHost}/api/Collaborateurs/get?collaborateurs=`;
 
 
   constructor(private http: HttpClient) {}
@@ -38,11 +38,13 @@ export class CollaborateurService {
     return this.http.get<Array<Collaborateur>>(this.apiUur+matricule);
   }
 
-  updateCollaborateur(collaborateurss: Collaborateur,id: Number):Observable<Collaborateur> {
-    return this.http.put<Collaborateur>(`${this.apiUr}${id}`,collaborateurss);
+  updateCollaborateur(id: number, collaborateur: Collaborateur): Observable<Collaborateur> {
+    return this.http.put<Collaborateur>(`${this.apiUr}/${id}`, collaborateur);
   }
 
-  public getCollaborateurById(collaborateurs: number): Observable<Collaborateur> {
-    return this.http.get<Collaborateur>(`${this.apiUu}/${collaborateurs}`);
+  getCollaborateurById(id: string): Observable<Collaborateur> {
+    return this.http.get<Collaborateur>(`${this.apiUu}/${id}`);
   }
 }
+
+

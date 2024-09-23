@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { CollaborateurService } from "../services/collaborateur.service";
-import { ActivatedRoute } from '@angular/router';
-import {Collaborateur} from "../model/collaborateur.model";
+import { ActivatedRoute, Router } from '@angular/router';
+import { Collaborateur } from "../model/collaborateur.model";
 
 @Component({
   selector: 'app-update-collaborateur',
@@ -10,55 +10,62 @@ import {Collaborateur} from "../model/collaborateur.model";
   styleUrls: ['./update-collaborateur.component.css']
 })
 export class UpdateCollaborateurComponent implements OnInit {
-  collaborateurFormGroup!: FormGroup;
-  collaborateurs!: number;
+  collaborateurFormGroupp!: FormGroup;
+  currentCollaborateur!: Collaborateur;
 
-  constructor(private fb: FormBuilder,
-              private collaborateurService: CollaborateurService,
-              private route: ActivatedRoute) {
+  constructor(
+    private fb: FormBuilder,
+    private collaborateurService: CollaborateurService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
+  ngOnInit(): void {
+    // Initialize the form with the necessary form controls and validations
+
+    this.collaborateurFormGroupp = this.fb.group({
+      collaborateurs: ['', Validators.required],
+      matricule: ['', Validators.required],
+      nom: ['', Validators.required],
+      prenom: ['', Validators.required],
+      terminal: ['', Validators.required],
+      fonction: ['', Validators.required],
+      statut: ['', Validators.required]
+    });
+
+    // Fetch the Collaborateur data by ID
+    const id = this.route.snapshot.paramMap.get('id'); // Get the id from the route
+    if (id) {
+      this.getCollaborateurById(id); // Fetch the data and populate the form
+    }
   }
 
-  ngOnInit() {
-    this.collaborateurs = this.route.snapshot.params['collaborateurs'];// Récupérer l'ID du collaborateur
-    this.collaborateurService.getCollaborateurById(this.collaborateurs).subscribe({
-      next: (collaborateurss) => {
-        this.collaborateurFormGroup=this.fb.group({
-          collaborateurs: this.fb.control(collaborateurss.collaborateurs, Validators.required),// Champ pour le collaborateurs
-          matricule: ['', Validators.required],    // Champ pour le matricule
-          nom: ['', Validators.required],        // Champ pour le nom
-          prenom: ['', Validators.required],     // Champ pour le prénom
-          terminal: ['', Validators.required],   // Champ pour le terminal
-          fonction: ['', Validators.required],   // Champ pour la fonction
-          statut: ['', Validators.required],
-        })
+  // Method to fetch Collaborateur by ID
+  getCollaborateurById(id: string): void {
+    this.collaborateurService.getCollaborateurById(id).subscribe({
+      next: (data) => {
+        this.currentCollaborateur = data;
+        this.collaborateurFormGroupp.patchValue(this.currentCollaborateur);  // Populate the form with the data
       },
-      error: error => {
-        console.log(error);
+      error: (err) => {
+        console.error('Error fetching collaborateur:', err);
       }
     });
   }
-/*
-  getCollaborateurById() {
-    this.collaborateurService.getCollaborateurById(this.collaborateurs).subscribe({
-      next: value => {
-        this.collaborateurs = value;
-      }
-    })
-  }*/
 
-  updateCollaborateur() {
-    this.collaborateurs = this.route.snapshot.params['collaborateurs'];// Récupérer l'ID du collaborateur
-    let collaborateurss : Collaborateur = this.collaborateurFormGroup.value;
-    this.collaborateurService.updateCollaborateur(collaborateurss,this.collaborateurs).subscribe({
-      next: value => {
-        alert("Collaborateur saved successfully");
-      },
-        error: err => {
-          console.log(err);
+  // Method to update the Collaborateur details
+  collaborateurss: any;
+  updateCollaborateur(collaborateurss: any): void {
+    if (this.collaborateurFormGroupp.valid) {
+      this.collaborateurService.updateCollaborateur(this.currentCollaborateur.collaborateurs, this.collaborateurFormGroupp.value).subscribe({
+        next: () => {
+          console.log('Collaborateur updated successfully');
+          this.router.navigate(['/collaborateurs']);  // Navigate back to the list page
+        },
+        error: (err) => {
+          console.error('Error updating collaborateur:', err);
         }
-      }
-    );
+      });
+    }
   }
 }
-

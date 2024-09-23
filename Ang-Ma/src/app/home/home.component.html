@@ -1,16 +1,43 @@
-<div class="container">
-    <mat-card class="example-card" appearance="outlined">
-        <mat-card-title>
-            <h5>Home</h5>
-        </mat-card-title>
-
-        <mat-card-content>
-          <img mat-card-image src="https://laquotidienne.ma/uploads/actualites/63c7e8b0f325a_transport-maritime.jpeg">
-
-          <h5>Statistique</h5>
-
-        </mat-card-content>
-
-      </mat-card>
-
+<div class="dashboard-container">
+  <!-- Statistiques clés -->
+  <div class="stats-cards">
+    <mat-card class="stat-card">
+      <mat-card-title class="stat-card-title">Total Collaborateurs</mat-card-title>
+      <mat-card-content>
+        <h2 class="stat-number">{{ totalCollaborateurs }}</h2>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="stat-card">
+      <mat-card-title class="stat-card-title">Total Groupes</mat-card-title>
+      <mat-card-content>
+        <h2 class="stat-number">{{ totalGroupes }}</h2>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="stat-card">
+      <mat-card-title class="stat-card-title">Total Repos</mat-card-title>
+      <mat-card-content>
+        <h2 class="stat-number">{{ totalRepos }}</h2>
+      </mat-card-content>
+    </mat-card>
   </div>
+
+  <!-- Graphiques côte à côte -->
+  <div class="charts-container">
+    <mat-card class="chart-card">
+      <mat-card-title>Collaborateurs par Groupe</mat-card-title>
+      <mat-card-content>
+        <canvas id="collaboratorsChart"></canvas>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="chart-card">
+      <mat-card-title>Repos par Type</mat-card-title>
+      <mat-card-content>
+        <canvas id="reposChart"></canvas>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+
+</div>

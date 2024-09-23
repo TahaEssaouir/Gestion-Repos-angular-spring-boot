@@ -12,9 +12,9 @@
           </div>
         </div>
 
-        <div>
-          <input type="text" [(ngModel)]="matricule" Search>
-          <button (click)="searchCollaborateurs()" mat-raised-button class="btn btn-search" >
+        <div id="search-bar">
+          <input type="text" placeholder="Search Collaborateur...." [(ngModel)]="matricule">
+          <button (click)="searchCollaborateurs()" mat-raised-button >
             <mat-icon>search</mat-icon>
           </button>
         </div>
@@ -43,7 +43,7 @@
               <mat-icon>delete</mat-icon>
               Delete
             </button>
-            <button (click)="handleEdit(collaborateurss)" mat-raised-button class="btn btn-outline-normal">
+            <button (click)="updateCollaborateur(collaborateurss)" mat-raised-button class="btn btn-outline-normal">
               <mat-icon>edit</mat-icon>
               Update
             </button>

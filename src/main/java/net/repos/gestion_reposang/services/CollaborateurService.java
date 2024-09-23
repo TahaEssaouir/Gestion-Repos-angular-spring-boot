@@ -37,7 +37,7 @@ public class CollaborateurService {
 
 
     public Collaborateur updateCollaborateur(@RequestParam String matricule,@RequestParam String nom,@RequestParam String prenom,
-                                            @RequestParam String terminal,@RequestParam String fonction,@RequestParam String statut,@PathVariable Long collaborateurs) {
+                                             @RequestParam String terminal,@RequestParam String fonction,@RequestParam String statut,@PathVariable Long collaborateurs) {
         Collaborateur collaborateur = collaborateurRepository.findById(collaborateurs).get();
         collaborateur.setMatricule(matricule);
         collaborateur.setNom(nom);

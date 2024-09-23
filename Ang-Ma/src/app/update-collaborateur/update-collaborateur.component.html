@@ -1,36 +1,36 @@
 <div>
-  <mat-card [formGroup]="collaborateurFormGroup" class="collab-from">
+  <mat-card [formGroup]="collaborateurFormGroupp" class="collab-from">
     <mat-card-header>
       <mat-card-title> Modifier Collaborateur</mat-card-title>
     </mat-card-header>
-    Collaborateur = {{collaborateurs}}
+
     <mat-card-content>
 
       <mat-form-field appearance="outline">
         <mat-label> Collaborateurs</mat-label>
-        <div [formGroup]="collaborateurFormGroup">
+        <div [formGroup]="collaborateurFormGroupp">
           <input matInput formControlName="collaborateurs">
         </div>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label> Matricule</mat-label>
-        <div [formGroup]="collaborateurFormGroup">
+        <div [formGroup]="collaborateurFormGroupp">
         <input matInput formControlName="matricule">
         </div>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Nom</mat-label>
-        <input  [formGroup]="collaborateurFormGroup" matInput formControlName="nom">
+        <input  [formGroup]="collaborateurFormGroupp" matInput formControlName="nom">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Prenom</mat-label>
-        <input matInput formControlName="prenom">
+        <input [formGroup]="collaborateurFormGroupp" matInput formControlName="prenom">
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" [formGroup]="collaborateurFormGroupp">
         <mat-label>Terminal</mat-label>
         <mat-select formControlName="terminal">
           <mat-option value="DTV">DTV</mat-option>
@@ -39,7 +39,7 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" [formGroup]="collaborateurFormGroupp">
         <mat-label>Fonction</mat-label>
         <mat-select formControlName="fonction">
           <mat-option value="Conducteurs Engins Levage">Conducteurs Engins Levage</mat-option>
@@ -55,7 +55,7 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" [formGroup]="collaborateurFormGroupp">
         <mat-label>Statut</mat-label>
         <mat-select formControlName="statut">
           <mat-option value="Titulaire ">Titulaire </mat-option>
@@ -64,7 +64,7 @@
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions>
-      <button (click)="updateCollaborateur()" mat-raised-button class="btn btn-save">
+      <button (click)="updateCollaborateur(collaborateurss)" mat-raised-button class="btn btn-save">
         update
       </button>
     </mat-card-actions>

@@ -36,6 +36,7 @@ import {MatDatepickerInput, MatDatepickerModule, MatDatepickerToggle} from "@ang
 import {MatNativeDateModule} from "@angular/material/core";
 //import {authGuard} from "./guards/auth.guard";
 import { DragDropModule} from "@angular/cdk/drag-drop";
+import {MatGridList, MatGridListModule, MatGridTile, MatGridTileFooterCssMatStyler} from "@angular/material/grid-list";
 
 @NgModule({
   declarations: [
@@ -84,6 +85,8 @@ import { DragDropModule} from "@angular/cdk/drag-drop";
     MatDatepickerToggle,
     MatDatepickerModule,
     DragDropModule,
+    MatGridListModule,
+    MatGridTileFooterCssMatStyler,
   ],
   providers: [
     provideAnimationsAsync(),//authGuard

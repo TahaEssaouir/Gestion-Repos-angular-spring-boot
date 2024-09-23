@@ -12,7 +12,6 @@ mat-card-title {
 
 .table {
   width: 100%;
-  margin-top: 20px;
   border-collapse: collapse;
 }
 
@@ -37,12 +36,13 @@ mat-card-title {
 }
 
 .btn {
-  margin-right: 8px;
+  margin-right: 10px;
 }
 
 
 .btn-newCll{
-  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 40px;
 }
 
 .btn-outline-danger {
@@ -67,28 +67,37 @@ mat-card-title {
   color: #f1efef;
 }
 
-
-.btn-search{
-  border: 3px solid #009688;
-  background-color: #009688;
-  color: white;
-  margin-left: 10px; /* Espacement à gauche du bouton */
-  margin-bottom: 10px;
+#search-bar{
+  display: flex;
+  background-color: #eeeefa;
+  border-radius: 40px;
+  margin-bottom:0px;
+  width: 400px;
+  box-shadow: 3px 3px 10px -3px gray;
+  overflow: hidden;
 }
 
-.btn-search:hover {
-  background-color: #009688;
-  color: #f1efef;
-}
 
+.search-bar:hover {
+  border: none;
+  margin-bottom:3px;
+  padding: 3px;
+  border-radius: 40px;
+  background-color: rgb(252, 228, 252);
+  width: 30px;
+  cursor: pointer;
+}
 
 /* CSS pour le champ input */
 input[type="text"] {
+  background-color: rgb(252, 228, 252);
+  all: unset;
+  flex-grow: 1;
+  padding: 10px 20px;
   width: 250px; /* Définir la largeur */
   padding: 5px; /* Espacement interne */
-  border: 3px solid #009688; /* Couleur de la bordure */
   border-radius:  9px; /* Bordure arrondie */
   outline: none; /* Supprimer le contour par défaut */
   font-size: 19px; /* Taille de la police */
   transition: border-color 0.9ms ; /* Animation de transition */
-} 
+}

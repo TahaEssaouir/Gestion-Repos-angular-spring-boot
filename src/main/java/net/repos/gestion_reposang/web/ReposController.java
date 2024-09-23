@@ -1,3 +1,4 @@
+
 package net.repos.gestion_reposang.web;
 
 import ch.qos.logback.core.model.Model;
@@ -33,6 +34,6 @@ public class ReposController {
     public ResponseEntity<?> deleteRepos(@PathVariable Long collaborateurs) {
         reposService.deleteRepos(collaborateurs);
         return ResponseEntity.ok().build();
-       // return "redirect:/repos";
+        // return "redirect:/repos";
     }
 }

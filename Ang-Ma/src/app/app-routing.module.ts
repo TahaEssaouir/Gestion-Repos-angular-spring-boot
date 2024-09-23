@@ -28,7 +28,8 @@ const routes: Routes = [
       {path: 'group', component: GroupComponent},
       {path: 'repos', component: ReposComponent},
       {path: 'new-collaborateur', component: NewCollaborateurComponent},
-      { path: 'update-collaborateur/:collaborateurs', component: UpdateCollaborateurComponent },
+      { path: 'admin/collaborateurs', component: CollaborateurComponent },
+      { path: 'update-collaborateur/:id', component: UpdateCollaborateurComponent }, // Page de mise à jour avec ID
       {path: 'new-group', component: NewGroupComponent},
       {path: 'new-repos', component: NewReposComponent},
     ]},

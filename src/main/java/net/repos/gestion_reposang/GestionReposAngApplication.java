@@ -22,7 +22,7 @@ public class GestionReposAngApplication {
     @Bean
     CommandLineRunner commandLineRunner(CollaborateurRepository collaborateurRepository) {
         return args -> {
-            collaborateurRepository.save(Collaborateur.builder().nom("Essaouir").prenom("Taha").matricule("B443424").terminal("DTP").fonction("Technician").statut("Titulaire")
+            collaborateurRepository.save(Collaborateur.builder().nom("Essaouir").prenom("Taha").matricule("B4432").terminal("DTV").fonction("Conducteurs Engins Levage").statut("Titulaire")
                     .build());
 
         };
